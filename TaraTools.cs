@@ -1,4 +1,8 @@
-﻿using Fanx.Util;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Fanx.Util;
 using Loon.Java;
 
 namespace TaraTools
