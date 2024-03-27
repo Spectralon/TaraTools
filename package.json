@@ -1,0 +1,25 @@
+{
+  "name": "ru.specter.taratools",
+  "version": "1.0.0",
+  "displayName": "Tara Tools",
+  "description": "Small and simple utility for operating *.tara files in Unity.",
+  "unity": "2017.1",
+  "keywords": [
+    "tara"
+  ],
+  "homepage": "https://github.com/Spectralon/TaraTools.git#upm",
+  "bugs": {
+    "url": "https://github.com/Spectralon/TaraTools/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Spectralon/TaraTools.git#upm"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Mikhail Kaufmann",
+    "email": "in@spected.ru",
+    "url": "https://github.com/Spectralon"
+  },
+  "license": "See LICENSE file"
+}
