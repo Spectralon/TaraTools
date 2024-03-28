@@ -1,6 +1,6 @@
 {
   "name": "ru.specter.taratools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Tara Tools",
   "description": "Small and simple utility for operating *.tara files in Unity.",
   "unity": "2017.1",
