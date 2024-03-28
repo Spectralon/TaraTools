@@ -1,20 +1,14 @@
 # TaraTools
-TaraTools is a small and simple command line utility for packing/unpacking ```*.tara``` files (ported to C# from https://github.com/TheEntropyShard/TaraTool). <br>
+TaraTools is a small and simple utility for operating  ```*.tara``` files in Unity. <br>
 Tara file is a simple archive format created by Alternativa Games. It was used to create prop libraries for Tanki Online.
 
-### Quick start
-```shell
-git clone https://github.com/Spectralon/TaraTools.git
-cd TaraTools
-TaraTools
+### Tara files direct operation:
+```cs 
+TaraTools.WriteTara(FileInfo[] files, string outputPath, string filesRoot);
+TaraTools.ReadTara(string path);
 ```
-Then you will see usage:
-```
-No args specified
-Usage: TaraTools <mode> <input/output file> <input/output folder>
-  Modes:
-    pack - Pack tara
-      Args: <input folder> <output file>
-    unpack - Unpack tara
-      Args: <input file> <output folder>
+### Extensions:
+```cs
+new DirectoryInfo(".").ToTara();
+new DirectoryInfo(".").ToTara(string outputPath);
 ```
