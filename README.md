@@ -4,11 +4,11 @@ Tara file is a simple archive format created by Alternativa Games. It was used t
 
 ### Tara files direct operation:
 ```cs 
-TaraTools.WriteTara(FileInfo[] files, string outputPath, string filesRoot);
+TaraTools.WriteTara(FileInfo[] files, string outputFileName, string filesRoot);
 TaraTools.ReadTara(string path);
 ```
 ### Extensions:
 ```cs
 new DirectoryInfo(".").ToTara();
-new DirectoryInfo(".").ToTara(string outputPath);
+new DirectoryInfo(".").ToTara(string outputFileName);
 ```

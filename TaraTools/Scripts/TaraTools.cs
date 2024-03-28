@@ -16,20 +16,20 @@ namespace TaraTools
             return outputPath;
         }
 
-        public static void ToTara(this DirectoryInfo directory, string outputPath) =>
-            WriteTara(directory.GetFiles("*.*", SearchOption.AllDirectories), outputPath, directory.FullName);
+        public static void ToTara(this DirectoryInfo directory, string outputFileName) =>
+            WriteTara(directory.GetFiles("*.*", SearchOption.AllDirectories), outputFileName, directory.FullName);
 
-        public static void WriteTara(IEnumerable<FileInfo> files, string outputPath, string root = "")
+        public static void WriteTara(IEnumerable<FileInfo> files, string outputFileName, string root = "")
         {
-            if (string.IsNullOrEmpty(outputPath))
-                throw new ArgumentException("Output path cannot be null.");
-            if (Path.GetExtension(outputPath) != ".tara")
-                outputPath = $"{outputPath}.tara";
+            if (string.IsNullOrEmpty(outputFileName))
+                throw new ArgumentException("Output file name cannot be null.");
+            if (Path.GetExtension(outputFileName) != ".tara")
+                outputFileName = $"{outputFileName}.tara";
 
-            DirectoryInfo? parent = Directory.GetParent(outputPath);
+            DirectoryInfo? parent = Directory.GetParent(outputFileName);
             if (parent != null) Directory.CreateDirectory(parent.FullName);
 
-            using (DataOutputStream writer = new(File.Open(outputPath, FileMode.Create)))
+            using (DataOutputStream writer = new(File.Open(outputFileName, FileMode.Create)))
             {
                 var fileEntries = files as FileInfo[] ?? files.ToArray();
                 writer.WriteInt(fileEntries.Length);
