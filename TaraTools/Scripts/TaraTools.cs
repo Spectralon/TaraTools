@@ -9,6 +9,9 @@ namespace TaraTools
 {
     public static class TaraTools
     {
+        /// <summary>
+        /// Convert this directory to the .tara file in the same folder.
+        /// </summary>
         public static string ToTara(this DirectoryInfo directory)
         {
             var outputPath = $"{directory.FullName}.tara";
@@ -16,9 +19,20 @@ namespace TaraTools
             return outputPath;
         }
 
+        /// <summary>
+        /// Convert this directory to the .tara file.
+        /// </summary>
+        /// <param name="directory">this directory info</param>
+        /// <param name="outputFileName">absolute name of resulting .tara file</param>
         public static void ToTara(this DirectoryInfo directory, string outputFileName) =>
             WriteTara(directory.GetFiles("*.*", SearchOption.AllDirectories), outputFileName, directory.FullName);
 
+        /// <summary>
+        /// Compress files collection to the .tara file.
+        /// </summary>
+        /// <param name="files">FileInfo collection</param>
+        /// <param name="outputFileName">absolute name of resulting .tara file</param>
+        /// <param name="root">common root of file paths (optional)</param>
         public static void WriteTara(IEnumerable<FileInfo> files, string outputFileName, string root = "")
         {
             if (string.IsNullOrEmpty(outputFileName))
@@ -51,6 +65,10 @@ namespace TaraTools
             }
         }
 
+        /// <summary>
+        /// Read all files from the .tara file. 
+        /// </summary>
+        /// <param name="path">path to the .tara file</param>
         public static FileEntry[] ReadTara(string path)
         {
             if (string.IsNullOrEmpty(path) || Path.GetExtension(path) != ".tara")
