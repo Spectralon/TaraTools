@@ -142,6 +142,7 @@ namespace TaraTools
                 case ".webp":
                     return FileType.Image;
                 case ".3ds":
+                case ".obj":
                     return FileType.Model;
                 case ".xml":
                     return FileType.XML;
